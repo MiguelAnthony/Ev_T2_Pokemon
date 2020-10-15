@@ -1,0 +1,31 @@
+﻿@{ var pokemon = (Reg_Pokemon)Model; }
+
+<h1>Crear un nuevo Pokemon</h1>
+
+
+<form action="/Pokemon/create" enctype="multipart/form-data" method="post">
+
+    <input type="file" name="Imagen" />
+    @Html.ValidationMessage("Imagen")
+
+    <label>Nombre</label>
+    <input class="form-control" name="Name" />
+    @Html.ValidationMessage("Name")
+    @Html.ValidationMessage("Name2")
+
+    <label>Tipo</label>
+    <div class="from-group">
+        <select class="form-control" name="Tipo">
+            <option value="">-- Selecciona una opción --</option>
+            <option value="Planta">Planta</option>
+            <option value="Fuego">Fuego</option>
+            <option value="Agua">Agua</option>
+            <option value="Veneno">Veneno</option>
+            <option value="Bicho">Bicho</option>
+        </select>
+    </div>
+    @Html.ValidationMessage("Tipo")
+
+    <button>Guardar</button>
+
+</form>

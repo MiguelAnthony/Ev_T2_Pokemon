@@ -1,0 +1,34 @@
+﻿@{ List<Reg_Pokemon> pokemons = ((List<Reg_Pokemon>)Model); }
+
+<h1>Pokemon </h1>
+<h3>Total de Pokemones capturados: @pokemons.Count </h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in pokemons)
+        {
+        <tr>
+            <td>
+                <img src="@item.Imagen" width="100" height="20" alt="Alternate Text" />
+            </td>
+            <td>@item.Nombre</td>
+            <td>@item.Tipo</td>
+            <td>
+                <a href="/Pokemon/Capturar?PokemonId=@item.Id">Capturar</a>
+                <a href="/Pokemon/Edit?PokemonId=@item.Id">Editar</a>
+                <a href="/Pokemon/Delete?PokemonId=@item.Id">Eliminar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
